@@ -2,6 +2,7 @@ package se.npet.microservices.messageconsumer.integration;
 
 import static org.awaitility.Awaitility.await;
 
+import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class BigFatIntegrationTest extends AbstractDbAndMessagingIntegrationTest
   @Test
   public void testPublishTempReadingAndCheckIfItIsStored() {
 
-    TemperatureReadingMessage tempReadingMsg = TemperatureReadingMessageCreator.newMessage(SENSOR_ID, 18.0);
+    TemperatureReadingMessage tempReadingMsg = TemperatureReadingMessageCreator.newMessage(SENSOR_ID, BigDecimal.valueOf(18.0));
 
     jmsTemplate.convertAndSend(Destinations.TEMPERATURE_READINGS_QUEUE, tempReadingMsg);
 
