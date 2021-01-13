@@ -1,8 +1,9 @@
 package se.npet.microservices.messageconsumer.service;
 
+import java.math.BigDecimal;
 import se.npet.microservices.messageconsumer.service.model.Deviation;
 
 public interface TemperatureDeviationCalculator {
 
-  Deviation calculateDeviation(double temperatureValue, double threshold, double allowedDeviation);
+  Deviation calculateDeviation(BigDecimal temperatureValue, double threshold, double allowedDeviation);
 }

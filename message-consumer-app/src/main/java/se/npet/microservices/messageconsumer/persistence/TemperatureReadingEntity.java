@@ -1,5 +1,6 @@
 package se.npet.microservices.messageconsumer.persistence;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public class TemperatureReadingEntity {
   @JoinColumn(name = "sensor_id")
   private TemperatureSensorEntity temperatureSensor;
 
-  private double temperature;
+  private BigDecimal temperature;
   private Deviation deviation;
   private LocalDateTime measurementTs;
   private LocalDateTime receivedTs;
@@ -46,11 +47,11 @@ public class TemperatureReadingEntity {
     this.temperatureSensor = temperatureSensor;
   }
 
-  public double getTemperature() {
+  public BigDecimal getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(double temperature) {
+  public void setTemperature(BigDecimal temperature) {
     this.temperature = temperature;
   }
 

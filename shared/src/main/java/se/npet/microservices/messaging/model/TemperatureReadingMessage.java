@@ -1,16 +1,19 @@
 package se.npet.microservices.messaging.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class TemperatureReadingMessage {
 
   private String messageId;
   private String sensorId;
-  private double temperature;
+
+  // temperature value in degrees celsius
+  private BigDecimal temperature;
 
   private LocalDateTime measurementTimeStamp;
 
-  public TemperatureReadingMessage(String messageId, String sensorId, double temperature, LocalDateTime measurementTimeStamp) {
+  public TemperatureReadingMessage(String messageId, String sensorId, BigDecimal temperature, LocalDateTime measurementTimeStamp) {
     this.messageId = messageId;
     this.sensorId = sensorId;
     this.temperature = temperature;
@@ -36,11 +39,11 @@ public class TemperatureReadingMessage {
     this.sensorId = sensorId;
   }
 
-  public double getTemperature() {
+  public BigDecimal getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(double temperature) {
+  public void setTemperature(BigDecimal temperature) {
     this.temperature = temperature;
   }
 
