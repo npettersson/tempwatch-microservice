@@ -9,11 +9,11 @@ public class TemperatureDeviationCalculatorImpl implements TemperatureDeviationC
 
   @Override
   public Deviation calculateDeviation(BigDecimal temperatureValue, double threshold, double allowedDeviation) {
-    if (temperatureValue >= (threshold + allowedDeviation)) {
+    if (temperatureValue.doubleValue() >= (threshold + allowedDeviation)) {
       return Deviation.HIGH;
     }
 
-    if (temperatureValue <= (threshold - allowedDeviation)) {
+    if (temperatureValue.doubleValue() <= (threshold - allowedDeviation)) {
       return Deviation.LOW;
     }
 

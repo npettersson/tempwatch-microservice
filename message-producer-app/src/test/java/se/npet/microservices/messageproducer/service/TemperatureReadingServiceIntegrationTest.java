@@ -46,7 +46,7 @@ public class TemperatureReadingServiceIntegrationTest {
         .statusCode(200);
 
     await().atMost(1, TimeUnit.SECONDS).with()
-        .pollInterval(100, TimeUnit.MILLISECONDS).un
+        .pollInterval(100, TimeUnit.MILLISECONDS)
         .until(this::receiveTemperatureReadingMessageFromQueue);
   }
 

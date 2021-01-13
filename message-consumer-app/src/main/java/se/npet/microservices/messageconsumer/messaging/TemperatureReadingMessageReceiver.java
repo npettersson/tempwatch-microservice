@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
-import se.npet.microservices.messageconsumer.model.TemperatureReadingMessage;
 import se.npet.microservices.messageconsumer.service.TemperatureReadingsService;
 import se.npet.microservices.messaging.Destinations;
+import se.npet.microservices.messaging.model.TemperatureReadingMessage;
 
 @Component
 public class TemperatureReadingMessageReceiver {

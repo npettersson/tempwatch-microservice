@@ -6,6 +6,10 @@ import java.util.UUID;
 
 public class TemperatureReadingMessageCreator {
 
+  public static TemperatureReadingMessage newMessage(String sensorId, double temperature) {
+    return newMessage(sensorId, BigDecimal.valueOf(temperature));
+  }
+
   public static TemperatureReadingMessage newMessage(String sensorId, BigDecimal temperature) {
     return newMessage(sensorId, temperature, LocalDateTime.now());
   }
